@@ -1,2 +1,17 @@
-package com.quizapp.dto.requestDto;public class QuestionUpdateRequestDto {
+package com.quizapp.dto.requestDto;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
+
+@Getter@Setter
+public class QuestionUpdateRequestDto {
+    private Long id;
+    private String question;
+    private String subject;
+    private String questionType;
+
+    private List<String> choices;
+    private List<String> correctAnswers;
 }
