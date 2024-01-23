@@ -1,12 +1,13 @@
 package com.quizapp.service;
 
-import com.quizapp.dto.requestDto.QuestionSaveRequestDto;
 import com.quizapp.dto.requestDto.QuestionUpdateRequestDto;
 import com.quizapp.entity.Question;
 import com.quizapp.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,10 +19,9 @@ public class QuestionService {
     private final QuestionRepository questionRepository;
     private final ModelMapper modelMapper;
 
-    public boolean saveQuestion(QuestionSaveRequestDto questionSaveRequestDto) {
-        Question question = modelMapper.map(questionSaveRequestDto, Question.class);
-        questionRepository.save(question);
-        return true;
+    public Question  createQuestion(Question questionCreateRequestDto) {
+        Question question = modelMapper.map(questionCreateRequestDto, Question.class);
+        return questionRepository.save(question);
     }
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
@@ -61,5 +61,10 @@ public class QuestionService {
             return "Bir hata ile karşılaşıldı! tekrar deneyiniz";
             }
         }
+
+    public List<Question> getQuestionsForUser(Integer numOfQuestions, String subject) {
+        Pageable pageable = PageRequest.of(0, numOfQuestions);
+        return questionRepository.findBySubject(subject, pageable).getContent();
+    }
     }
 
