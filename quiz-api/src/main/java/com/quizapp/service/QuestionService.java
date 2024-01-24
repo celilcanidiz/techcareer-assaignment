@@ -65,5 +65,10 @@ public class QuestionService {
         Pageable pageable = PageRequest.of(0, numOfQuestions);
         return questionRepository.findBySubject(subject, pageable).getContent();
     }
+
+    public List<String> getAllSubjects() {
+        return questionRepository.findDistinctSubject();
     }
+
+}
 
