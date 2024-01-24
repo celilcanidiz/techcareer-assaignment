@@ -69,6 +69,5 @@ public class QuestionService {
     public List<String> getAllSubjects() {
         return questionRepository.findDistinctSubject();
     }
-
 }
 
