@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Quiz from './components/quiz/Quiz'
 import Home from './components/Home'
 import AddQuestion from './components/question/AddQuestion'
 import './App.css'
@@ -14,8 +13,11 @@ function App() {
       <Router>
         <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/take-quiz" element={<Quiz />} />
       <Route path="/create-quiz" element={<AddQuestion />} />
       <Route path="/update-quiz/:id" element={<UpdateQuestion />} />
+      <Route path="/all-quizzes" element={<GetAllQuiz />} />
+			<Route path="/quiz-result" element={<QuizResult />} />
       </Routes>
       </Router>
     </main>
