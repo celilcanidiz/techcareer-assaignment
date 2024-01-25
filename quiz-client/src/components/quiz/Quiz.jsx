@@ -127,7 +127,7 @@ const handleSubmit = () => {
 	return (
 		<div className="p-5">
 			<h3 className="text-info">
-				Question {quizQuestions.length > 0 ? currentQuestionIndex + 1 : 0} of {quizQuestions.length}
+				Soru {quizQuestions.length > 0 ? currentQuestionIndex + 1 : 0} of {quizQuestions.length}
 			</h3>
 
 			<h4 className="mb-4">
@@ -159,7 +159,7 @@ const handleSubmit = () => {
 								answer.id === quizQuestions[currentQuestionIndex]?.id || answer.answer.length > 0
 						)
 					}>
-					{currentQuestionIndex === quizQuestions.length - 1 ? "Submit quiz" : "Next question"}
+					{currentQuestionIndex === quizQuestions.length - 1 ? "Quizi Tamamla" : "Sıradaki Soru"}
 				</button>
 			</div>
 		</div>
