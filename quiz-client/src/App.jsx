@@ -15,6 +15,7 @@ function App() {
         <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/create-quiz" element={<AddQuestion />} />
+      <Route path="/update-quiz/:id" element={<UpdateQuestion />} />
       </Routes>
       </Router>
     </main>
