@@ -62,18 +62,18 @@ const UpdateQuestion = () => {
 	}
 
 	if (isLoading) {
-		return <p>Loading...</p>
+		return <p>Yükleniyor...</p>
 	}
 
 	return (
 		<div className="container">
 			<h4 className="mt-5" style={{ color: "GrayText" }}>
-				Update Quiz Question
+				Quiz Sorusunu Güncelle
 			</h4>
 			<div className="col-8">
 				<form onSubmit={handleUpdate}>
 					<div className="form-group">
-						<label className="text-info">Question:</label>
+						<label className="text-info">Soru:</label>
 						<textarea
 							className="form-control"
 							rows={4}
@@ -82,7 +82,7 @@ const UpdateQuestion = () => {
 					</div>
 
 					<div className="form-group">
-						<label className="text-info">Choices:</label>
+						<label className="text-info">Seçenekler:</label>
 						{choices.map((choice, index) => (
 							<input
 								key={index}
@@ -94,7 +94,7 @@ const UpdateQuestion = () => {
 						))}
 					</div>
 					<div className="form-group">
-						<label className="text-info">Correct Answer(s):</label>
+						<label className="text-info">Doğru Cevap(s):</label>
 						<input
 							type="text"
 							className="form-control mb-4"
@@ -105,10 +105,10 @@ const UpdateQuestion = () => {
 
 					<div className="btn-group">
 						<button type="submit" className="btn btn-sm btn-outline-warning">
-							Update question
+							Soruyu Güncelle
 						</button>
 						<Link to={"/all-quizzes"} className="btn btn-outline-primary ml-2">
-							Back to all questions
+							Tüm sorulara geri dön
 						</Link>
 					</div>
 				</form>
