@@ -7,6 +7,7 @@ import AddQuestion from './components/question/AddQuestion'
 import UpdateQuestion from './components/question/UpdateQuestion'
 import GetAllQuiz from './components/quiz/GetAllQuiz'
 import QuizResult from './components/quiz/QuizResult'
+import Admin from './components/Admin'
 import Navbar from './components/layout/NavBar'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -15,7 +16,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <main>
+      <main className="container mt-5 mb-5">
       <Router>
       <Navbar />
         <Routes>
