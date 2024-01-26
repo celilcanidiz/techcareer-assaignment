@@ -146,7 +146,7 @@ const handleSubmit = () => {
 					className="btn btn-sm btn-primary me-2"
 					onClick={handlePreviousQuestion}
 					disabled={currentQuestionIndex === 0}>
-					Previous question
+					Önceki Soru
 				</button>
 				<button
 					className={`btn btn-sm btn-info ${
