@@ -15,7 +15,7 @@ import {useLocation, Link} from "react-router-dom"
 				<h3>Quiz Sonucunuz :</h3>
 				<hr />
 				<h5 className="text-info">
-					{totalScores} sorunun {numQuestions} soru doğru cevapladınız.
+					{totalScores} soruda {numQuestions} soru doğru cevapladınız.
 				</h5>
 				<p>Skorunuz: {percentage}%.</p>
 
