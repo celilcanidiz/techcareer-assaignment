@@ -1,14 +1,13 @@
 import React from "react"
-import { useLocation} from "react-router-dom"
+import {useLocation, Link} from "react-router-dom"
 
  const QuizResult = () => {
 		const location = useLocation()
 		const { quizQuestions, totalScores } = location.state
 		const numQuestions = quizQuestions.length
 		const percentage = Math.round((totalScores / numQuestions) * 100)
-
 		const handleRetakeQuiz = () => {
-			alert("Oops! this functionality was not implemented!!!")
+			navigate('quiz-stepper');
 		}
 
 		return (
@@ -20,9 +19,7 @@ import { useLocation} from "react-router-dom"
 				</h5>
 				<p>Skorunuz: {percentage}%.</p>
 
-				<button className="btn btn-primary btn-sm" onClick={handleRetakeQuiz}>
-					Quizi Tekrar Et
-				</button>
+				<Link to="/quiz-stepper" className="btn btn-primary btn-sm">Yeni Quiz Çöz</Link>
 			</section>
 		)
  }
