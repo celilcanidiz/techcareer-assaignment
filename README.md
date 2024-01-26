@@ -1,6 +1,5 @@
-# Quez api
 ___
-### Spring Boot and ReactJS Application
+# Spring Boot and ReactJS Application
 ---
 
 ### Tech Stack
